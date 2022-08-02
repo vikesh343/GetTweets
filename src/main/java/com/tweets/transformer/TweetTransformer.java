@@ -110,23 +110,7 @@ public class TweetTransformer {
 		urls.add(tweetDetail.getUser().getEntities().getUrl().getUrls().get(0).getDisplay_url());
 		urls.add(tweetDetail.getUser().getEntities().getUrl().getUrls().get(0).getExpanded_url());
 		urls.add(tweetDetail.getUser().getEntities().getUrl().getUrls().get(0).getUrl());
-		/*
-		 * urls.add(tweetDetail.getEntities().getUrl().getUrls().get(0).getDisplay_url()
-		 * );
-		 * urls.add(tweetDetail.getEntities().getUrl().getUrls().get(0).getExpanded_url(
-		 * )); urls.add(tweetDetail.getEntities().getUrl().getUrls().get(0).getUrl());
-		 */
-		// urls.add(tweetDetail.getUser());
 		response.setUrls(urls);
-		// List<TweetDetails> tweets = new ArrayList<>();
-		// tweets.add(tweetDetail);
-		// List<String> urlStrings =
-		// tweets.stream().flatMap(i->i.stream()).collect(Collectors.toList());
-		// while()
-		// List<String> urls = ;
-		// use flatmap to flat the map
-		// then search the list for urls using regular expressions
-
 		return response;
 	}
 
@@ -150,7 +134,6 @@ public class TweetTransformer {
 				urls.add(url.getUrl()==null?"":url.getUrl());
 			}
 		}
-
 		return response;
 	}
 
