@@ -1,12 +1,16 @@
 package com.algoworks.tweets.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TweetsDetailResponse {
-	private long id;
+	private String id;
 	private String name;
-	private String userName;
+	private String screenName;
 	private String text;
 	private String createdAt;
 	private String retweetCount;

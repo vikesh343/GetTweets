@@ -18,7 +18,7 @@ import com.algoworks.tweets.response.UsersDetailsResponse;
 import com.algoworks.tweets.util.Utility;
 
 @Component
-public class GetTweetsBusinessService implements IGetTweetsBusinessService {
+public class TweetBusinessService implements ITweetBusinessService {
 
 	@Autowired
 	TweetTransformer tranformer;

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.algoworks.tweets.businessservice.IGetTweetsBusinessService;
+import com.algoworks.tweets.businessservice.ITweetBusinessService;
 import com.algoworks.tweets.exception.CustomApplicationException;
 import com.algoworks.tweets.response.Links;
 import com.algoworks.tweets.response.TweetDetailsResponse;
@@ -28,14 +28,14 @@ public class TweetsController {
 	Logger log = Logger.getLogger(TweetsController.class.getName());
 
 	@Autowired
-	IGetTweetsBusinessService businessService;
+	ITweetBusinessService businessService;
 
-	@GetMapping("/HealthCheck")
+	@GetMapping("/healthcheck")
 	public String healthCheck() {
 		return "OK";
 	}
 
-	@GetMapping("/tweets")
+	@GetMapping("/tweet")
 	public List<TweetsDetailResponse> getAllTweets() {
 		List<TweetsDetailResponse> response = new ArrayList<>();
 		try {
@@ -47,7 +47,7 @@ public class TweetsController {
 		return response;
 	}
 
-	@GetMapping("/users")
+	@GetMapping("/user")
 	public List<UsersDetailsResponse> getUsersDetails() {
 		List<UsersDetailsResponse> response = new ArrayList<>();
 		try {
@@ -71,7 +71,7 @@ public class TweetsController {
 		return response;
 	}
 
-	@GetMapping("/tweets/{id}")
+	@GetMapping("/tweet/{id}")
 	public TweetDetailsResponse getTweetByID(@PathVariable(value = "id", required = true) long id) {
 		TweetDetailsResponse getTweet = new TweetDetailsResponse();
 		if (id <= 0) {
@@ -86,7 +86,7 @@ public class TweetsController {
 		return getTweet;
 	}
 
-	@GetMapping("/users/{screenName}")
+	@GetMapping("/user/{screenName}")
 	public UserDetailsResponse getUserByScreenName(@PathVariable(value = "screenName", required = true) String screenName) {
 		UserDetailsResponse getTweet = new UserDetailsResponse();
 		if (screenName == null || screenName.isBlank()) {

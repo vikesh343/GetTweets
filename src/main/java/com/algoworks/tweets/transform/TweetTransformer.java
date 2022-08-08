@@ -20,7 +20,7 @@ public class TweetTransformer {
 
 	public TweetsDetailResponse transformGetAllTweets(TweetDetails tweetDetail) {
 		TweetsDetailResponse allTweetsDetails = new TweetsDetailResponse();
-		allTweetsDetails.setId(tweetDetail.getTweetId());
+		allTweetsDetails.setId(((Long)tweetDetail.getTweetId()).toString());
 		allTweetsDetails.setCreatedAt(tweetDetail.getCreatedAt());
 		allTweetsDetails.setText(tweetDetail.getText());
 		return allTweetsDetails;
@@ -44,9 +44,9 @@ public class TweetTransformer {
 		TweetsDetailResponse getTweet = new TweetsDetailResponse();
 		error.setErrorCode(ApplicationConstants.ERROR_CODE_SUCCESS);
 		error.setErrorDescription(ApplicationConstants.SUCCESS);
-		getTweet.setId(tweetDetail.getUser().getId());
+		getTweet.setId(((Long)tweetDetail.getUser().getId()).toString());
 		getTweet.setName(tweetDetail.getUser().getName());
-		getTweet.setUserName(tweetDetail.getUser().getScreenName());
+		getTweet.setScreenName(tweetDetail.getUser().getScreenName());
 		getTweet.setText(tweetDetail.getText());
 		getTweet.setRetweetCount(tweetDetail.getRetweetCount());
 		getTweet.setCreatedAt(tweetDetail.getCreatedAt());

@@ -11,7 +11,7 @@ import com.algoworks.tweets.response.UserDetailsResponse;
 import com.algoworks.tweets.response.TweetsDetailResponse;
 import com.algoworks.tweets.response.UsersDetailsResponse;
 @Component
-public interface IGetTweetsBusinessService {
+public interface ITweetBusinessService {
 
 	List<TweetsDetailResponse> getAllTweetsDetails();
 
